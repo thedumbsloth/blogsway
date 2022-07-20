@@ -1,0 +1,20 @@
+<%- include("partials/header1.ejs") %>
+<a href="/<%= userId%>/myblogs"><button type="button " class="btn btn-color home-icon">My Blogs</button></a>
+
+<div class="container">
+<h1>Edit</h1>
+<form action="/<%= userId %>/<%= blog._id %>/edit" method="post">
+  <div class="form-group">
+    <label >Title</label>
+    <input class="form-control input-sm" name="blogTitle" value="<%= blog.title %> " id="inputsm" type="text" />
+  </div>
+  <div class="form-group">
+    <label>Post</label>
+    <textarea rows="16" name="blogPost" type="text" class="form-control height"><%= blog.content %> </textarea>
+  </div>
+</div>
+<div>
+  <button class="btn btn-success" type="submit" name="button" value="public">Public</button>
+  <button class="btn btn-danger" type="submit" name="button" value="private">Private</button>
+</div>
+</form>

@@ -1,0 +1,58 @@
+
+<%- include("partials/header1.ejs") %>
+
+
+<a href="/<%= user._id%>/blogs"><button type="button " class="btn btn-color home-icon">Blogs</button></a>
+<a href="/<%= user._id%>/compose"><button type="button " class="btn btn-color home-icon">Compose</button></a>
+        </div>
+     </div>
+    </nav>
+</header>
+<% if( my_blogs.length == 0){ %>
+<div class="alert alert-info" role="alert">
+    <h4 class="alert-heading">Hello <%= user.username%>, </h4>
+    <p>Seems like you haven't penned any blog posts yet.</p>
+    <hr>
+    <p class="mb-0">Go create your first one by hitting on Compose!</p>
+  </div>
+  <% } %> 
+    
+
+
+<% user.blog.forEach(function(blog){ %>
+    
+
+    <div class="my_blogs_div" >
+    <h1 class="my_blogs_h1"><%= blog.title %></h1>
+
+
+    <button type="button" class="btn btn-color dropdown-toggle float-end" data-bs-toggle="dropdown" aria-expanded="false">
+      Action
+    </button>
+    <ul class="dropdown-menu">
+      <li><a class="dropdown-item" href="/<%= user._id %>/<%= blog._id %>/edit">Edit</a></li>
+      <% if (blog.visibility === "public") { %>
+        <li><a class="dropdown-item" href="/<%= user._id %>/<%= blog._id %>/visibility/private">Private</a></li>
+      <% }else{ %>
+        <li><a class="dropdown-item" href="/<%= user._id %>/<%= blog._id %>/visibility/public">Public</a></li>
+        <% } %> 
+
+      
+      <li><a class="dropdown-item" href="/<%= user._id %>/<%= blog._id %>/del">Delete</a></li>
+      
+    </ul>
+ 
+  <p><%= blog.content %></p> 
+   
+</div>
+   
+
+   
+    <% }); %> 
+
+   
+
+
+
+
+  

@@ -1,0 +1,20 @@
+{
+  "name": "blogsway",
+  "version": "1.0.0",
+  "description": "\"blogs project\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "sanjyoti das",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "body-parser": "^1.20.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.4.5",
+    "popups": "^1.1.3"
+  }
+}

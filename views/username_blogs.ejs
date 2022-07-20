@@ -1,0 +1,34 @@
+<%- include("partials/header1.ejs") %>
+
+      <%   { %>
+       
+        
+      
+      <%  var visible_blogs = 0 %> 
+<% user.blog.forEach(function(piece){ %>
+    <% if (piece.visibility === "public") { %>
+        <%  visible_blogs++ %> 
+        <% if (visible_blogs == 1) { %>
+            <h1> Blogs by <%= user.username %> </h1>
+        <% } %>
+     
+        <div class="my_blogs_div">
+           
+            <h1 class="my_blogs_h1"><%= piece.title %></h1>
+            <p><%= piece.content %></p>
+        </div>
+
+    <% } %>
+    <% }) %>
+    <% } %> 
+
+    <% if( visible_blogs == 0) {%>
+    <div class="alert alert-info" role="alert">
+
+        <h4 class="alert-heading">Hey There! </h4>
+        <p>Seems like <%= user.username %> hasn't posted any blogs yet.</p>
+        <hr>
+        <p class="mb-0">Head back and and browse through other authors' blogs!</p>
+      </div>
+
+      <% } %> 
