@@ -170,7 +170,7 @@ app.post("/:userId/compose",function(req,res){
 })
 
 app.post("/:userId/:blogId/edit",function(req,res){
-    console.log("edit");
+    // console.log("edit");
 const blogTitle = req.body.blogTitle;
 const blogPost = req.body.blogPost;
 const method = req.body.button;
