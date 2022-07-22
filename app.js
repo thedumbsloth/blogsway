@@ -13,7 +13,7 @@ const app = express();
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
-mongoose.connect("mongodb://127.0.0.1:27017/blogswayDB",{useNewUrlParser:true});
+mongoose.connect("mongodb+srv://sanjyotidas:O9Z14e7jebuFUzdC@cluster0.kyahv.mongodb.net/blogswayDB",{useNewUrlParser:true});
 
 blogSchema = new mongoose.Schema({
     title:String,
@@ -80,6 +80,7 @@ app.post("/register",function(req,res){
 
 
 app.get("/login",function(req,res){
+
     res.render("login-register",{status:"Login",result:"rendering"});
   })
 
@@ -273,8 +274,11 @@ app.get("/:userId/:blogId/visibility/:visibility",function(req,res){
 
 
     
+let port = process.env.PORT;
+if(port == null|| port==""){
+port = 3000;
+}
 
-
-app.listen(3000,function(){
-    console.log("server running at port 3000");
+app.listen(port,function(){
+    console.log("server started successfully");
 })
