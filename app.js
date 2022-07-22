@@ -7,9 +7,9 @@ const bcrypt = require("bcrypt");
 
 const saltRounds = 2;
 
-
-
+const http = require('http');
 const app = express();
+const server = http.createServer(app);
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
@@ -279,6 +279,6 @@ if(port == null|| port==""){
 port = 3000;
 }
 
-app.listen(port,function(){
-    console.log("server started successfully");
-})
+app.listen(process.env.PORT || 3000, function(){
+    console.log("Express server listening on port %d in %s mode", this.address().port, app.settings.env);
+  });
