@@ -1,5 +1,5 @@
 
-<h2 style="text-align:center">Blogsway</h2>
+<h2>Blogsway</h2>
 <h3>Technologies used:</h3>
 <p>
     Front-end: HTML, CSS, Bootstrap(CSS-framework), EJS templating
