@@ -13,7 +13,7 @@ const server = http.createServer(app);
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
-mongoose.connect("mongodb+srv://sanjyotidas:O9Z14e7jebuFUzdC@cluster0.kyahv.mongodb.net/blogswayDB",{useNewUrlParser:true});
+mongoose.connect("mongoose.connect("mongodb://127.0.0.1:27017/blogswayDB",{useNewUrlParser:true});",{useNewUrlParser:true});
 
 blogSchema = new mongoose.Schema({
     title:String,
